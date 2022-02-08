@@ -9,6 +9,10 @@
 4. You can find a stable PHPMailer verion [here](https://github.com/PHPMailer/PHPMailer).
 5. Please feel free to forked, modified and use it on your purpose.
 
+## What we have done
+1. In src/SMTP.php, at function mail(), we change and fix to use SMTPUTF8.
+2. In src/PHPMailer.php, at function preSend(), we comment out punyencodeAddress() function and decide not to use it as it make Thai email cannot send.
+
 ## License
 This software is distributed under the [LGPL 2.1](http://www.gnu.org/licenses/lgpl-2.1.html) license, along with the [GPL Cooperation Commitment](https://gplcc.github.io/gplcc/). Please read [LICENSE](https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE) for information on the software availability and distribution.
 
