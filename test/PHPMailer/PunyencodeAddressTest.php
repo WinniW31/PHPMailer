@@ -23,7 +23,6 @@ use PHPMailer\Test\TestCase;
  */
 final class PunyencodeAddressTest extends TestCase
 {
-
     /**
      * Test IDN to ASCII form/punycode conversion for an email address.
      *
@@ -71,6 +70,11 @@ final class PunyencodeAddressTest extends TestCase
                 'input'    => 'fran&ccedil;ois@fran&ccedil;ois.ch',
                 'charset'  => PHPMailer::CHARSET_UTF8,
                 'expected' => 'fran&ccedil;ois@xn--franois-xxa.ch',
+            ],
+            'IDN conversion flags' => [
+                'input'    => 'test@fußball.test',
+                'charset'  => PHPMailer::CHARSET_UTF8,
+                'expected' => 'test@xn--fuball-cta.test',
             ],
         ];
     }
